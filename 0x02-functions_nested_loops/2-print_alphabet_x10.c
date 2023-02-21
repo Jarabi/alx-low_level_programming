@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - Function to print lowercase alphabet to stdout
+ * print_alphabet_x10 - Function to print lowercase alphabet to stdout
  *
  * Return: void
  */
@@ -9,7 +9,7 @@ void print_alphabet_x10(void)
 {
 	int count = 0;
 
-	while(count < 10)
+	while (count < 10)
 	{
 		char str = 'a';
 

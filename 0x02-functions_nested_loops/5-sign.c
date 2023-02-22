@@ -1,14 +1,14 @@
-
 #include <ctype.h>
 
 /**
- * _isalpha - Function to check for alphabetic character
- * @c: The character to check
+ * print_sign - Function that prints the sign of a number
+ * @n: The number to check
  *
- * Return: If c is a letter, lowercase or uppercase, 1.
- * Otherwise, 0.
+ * Return: 1 and print + if n is greater than zero
+ * Return: 0 and print 0 if n is zero
+ * Return: -1 and prints - if n is less than zero
  */
-int _isalpha(int c)
+int print_sign(int n)
 {
 	int ret = isalpha(c) == 0 ? 0 : 1;
 

@@ -1,5 +1,3 @@
-#include <ctype.h>
-
 /**
  * _islower - Function to check for lowercase character
  * @c: The character to check
@@ -9,7 +7,5 @@
  */
 int _islower(int c)
 {
-	int ret = islower(c) == 0 ? 0 : 1;
-
-	return (ret);
+	return (c >= 97 && c <= 122);
 }

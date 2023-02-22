@@ -22,22 +22,15 @@ void times_table(void)
 				_putchar('0' + val % 10);
 			} else
 			{
+				_putchar(' ');
 				_putchar('0' + val);
 			}
 
 			/* Handle val trail */
 			if (j < 9)
 			{
-				if (val > 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				} else
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
 		_putchar('\n');

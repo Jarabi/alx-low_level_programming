@@ -1,8 +1,6 @@
-#include <ctype.h>
+#include "main.h"
 
-/**
- * print_sign - Function that prints the sign of a number
- * @n: The number to check
+/** @n: The number to check
  *
  * Return: 1 and print + if n is greater than zero
  * Return: 0 and print 0 if n is zero
@@ -10,7 +8,22 @@
  */
 int print_sign(int n)
 {
-	int ret = isalpha(c) == 0 ? 0 : 1;
+	int value;
+	char sign = n == 0 ? '0' : n > 0 ? '+' : '-';
 
-	return (ret);
+	switch (sign)
+	{
+		case '+':
+			value = 1;
+			break;
+		case '0':
+			value = 0;
+			break;
+		case '-':
+			value = -1;
+			break;
+	}
+
+	_putchar(sign);
+	return (value);
 }

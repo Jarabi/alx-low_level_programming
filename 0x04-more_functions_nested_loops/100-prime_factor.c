@@ -26,7 +26,7 @@ int main(void)
 
 		if (num == divisor)
 		{
-			printf("%lu is the largest prime factor!\n", max_prime);
+			printf("%lu\n", max_prime);
 			break;
 		}
 	}

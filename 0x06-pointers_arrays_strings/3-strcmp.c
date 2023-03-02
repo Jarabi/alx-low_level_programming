@@ -9,19 +9,26 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int s1_len, s2_len, result;
+	int i; /* iterator */
+	int s1_len; /* length of s1 */
+	int s2_len; /* length of s2 */
+	int s_diff; /* string with greater length (s1 or s2) */
+	int int_diff = 0; /* integer difference between s1 and s2 */
 
 	s1_len = check_str_len(s1);
 	s2_len = check_str_len(s2);
 
-	if (s1_len > s2_len)
-		result = 15;
-	else if (s1_len < s2_len)
-		result = -15;
-	else
-		result = 0;
+	/* length of longer string */
+	s_diff = s1_len >= s2_len ? s1_len : s2_len;
 
-	return (result);
+	for (i = 0; i < s_diff; i++)
+	{
+		if (int_diff == 0)
+			int_diff += (s1[i] - s2[i]);
+		else
+			break;
+	}
+	return (int_diff);
 }
 
 /**

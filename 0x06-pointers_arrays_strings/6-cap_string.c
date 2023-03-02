@@ -22,17 +22,17 @@ char *cap_string(char *s)
 				s[i] == '"' || s[i] == '(' || s[i] == ')' ||
 				s[i] == '{' || s[i] == '}' || s[i] == ':' ||
 				s[i] == '\n' || s[i] == '\t')
-			check = 1;
+			check = 0;
 		else
 		{
-			if ((s[i] >= 'a' && s[i] <= 'z') && check)
+			if ((s[i] >= 'a' && s[i] <= 'z') && check == 0)
 			{
 				s[i] -= 32;
-				check = 0;
+				check++;
 			}
 			else
 			{
-				check = 0;
+				check++;
 			}
 		}
 	}

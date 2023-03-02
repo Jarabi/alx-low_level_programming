@@ -6,18 +6,33 @@
  */
 char *cap_string(char *s)
 {
-	int i, j;
-	int arrlen = 12;
-	int separators[] = {9, 10, 32, 33, 34, 40, 41, 44, 46, 58, 59, 63, 123, 125};
+	int i;
+	int str_len = 0;
+	int check = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	/* get length of s */
+	while (s[str_len] != '\0')
+		str_len++;
+
+	/* iterate through s */
+	for (i = 0; i < str_len; i++)
 	{
-		for (j = 0; j < arrlen; j++)
+		if (s[i] == ',' || s[i] == ';' || s[i] == '.' ||
+				s[i] == '!' || s[i] == ' ' || s[i] == '?' ||
+				s[i] == '"' || s[i] == '(' || s[i] == ')' ||
+				s[i] == '{' || s[i] == '}' || s[i] == ':' ||
+				s[i] == '\n' || s[i] == '\t')
+			check = 1;
+		else
 		{
-			if (s[i - 1] == separators[j])
+			if ((s[i] >= 'a' && s[i] <= 'z') && check)
 			{
-				if (s[i] >= 'a' && s[i] <= 'z')
-					s[i] -= 32;
+				s[i] -= 32;
+				check = 0;
+			}
+			else
+			{
+				check = 0;
 			}
 		}
 	}

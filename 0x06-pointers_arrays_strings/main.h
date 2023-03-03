@@ -11,5 +11,6 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *leet(char *);
 int check_separator(char *c);
+char *rot13(char *);
 
 #endif /* MAIN_H */

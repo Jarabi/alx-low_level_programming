@@ -7,15 +7,19 @@
 char *rot13(char *s)
 {
 	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((s[i] >= 97 && s[i] <= 122) || (s[i] >= 65 && s[i] <= 90))
+		for (j = 0; j < 52; j++)
 		{
-			if (s[i] > 109 || (s[i] > 77 && s[i] < 91))
-				s[i] -= 13;
-			else
-				s[i] += 13;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
 	}
 	return (s);

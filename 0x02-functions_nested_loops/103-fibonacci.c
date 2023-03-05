@@ -7,11 +7,14 @@
  */
 int main(void)
 {
-	unsigned long int i = 1, j = 2, k, sum, total;
+	unsigned long int i, j, k, sum, total;
 
-	printf("1, 2");
+	i = 0;
+	j = 1;
+	sum = 0;
+	total = 0;
 
-	for (k = 3; k < 4000000; k++)
+	for (k = 0; sum <= 4000000; k++)
 	{
 		sum = i + j;
 		i = j;

@@ -16,7 +16,7 @@ int main(void)
 
 	printf("1, 2");
 
-	for (k = 0; k < 95; k++)
+	for (k = 0; k < 96; k++)
 	{
 		sum = i + j;
 		i = j;

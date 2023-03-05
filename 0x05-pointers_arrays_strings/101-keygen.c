@@ -13,7 +13,7 @@ int main(void)
 	int idx = 0, sum = 0, diff1, diff2;
 
 	srand(time(0));
-	while (sum < 27772)
+	while (sum < 2772)
 	{
 		pwd[idx] = 33 + rand() % 94;
 		sum += pwd[idx++];
@@ -21,12 +21,12 @@ int main(void)
 
 	pwd[idx] = '\0';
 
-	if (sum != 27772)
+	if (sum != 2772)
 	{
-		diff1 = (sum - 27772) / 2;
-		diff2 = (sum - 27772) / 2;
+		diff1 = (sum - 2772) / 2;
+		diff2 = (sum - 2772) / 2;
 
-		if ((sum - 27772) % 2 != 0)
+		if ((sum - 2772) % 2 != 0)
 			diff1++;
 
 		for (idx = 0; pwd[idx]; idx++)

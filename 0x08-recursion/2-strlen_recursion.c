@@ -7,6 +7,10 @@
  */
 int _strlen_recursion(char *s)
 {
+	int len;
+
 	/* Check if string is empty */
-	return (*s == '\0') ? (0) : (1 + _strlen_recursion(s + 1));
+	len = (*s == '\0') ? (0) : (1 + _strlen_recursion(s + 1));
+
+	return (len);
 }

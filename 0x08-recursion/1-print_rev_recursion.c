@@ -7,16 +7,9 @@
  */
 void _print_rev_recursion(char *s)
 {
-	/* Check if string is empty */
-	if (*s == '\0')
+	if (*s)
 	{
-		_putchar('\n');
-		return;
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 	}
-
-	/* Move pointer to next character*/
-	_print_rev_recursion(s + 1);
-
-	/* Print the characters in reverse */
-	_putchar(*s);
 }

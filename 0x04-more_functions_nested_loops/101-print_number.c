@@ -20,21 +20,18 @@ void print_number(int n)
 		return;
 	}
 
-	/* get the number of digits in the input*/
 	while (input != 0)
 	{
 		input /= 10;
 		count++;
 	}
 
-	/* handle negative numbers*/
 	if (n < 0)
 	{
 		_putchar(45);
 		n *= -1;
 	}
 
-	/* print the digits */
 	zeros = count - 1;
 
 	while (zeros >= 0)

@@ -14,15 +14,16 @@ char *create_array(unsigned int size, char c)
 	char *arr;
 	unsigned int i = 0;
 
-	arr = malloc(size * sizeof(char));
+	if (size == 0)
+		return (NULL);
 
-	/* Test for arr */
-	/* printf("Size: %i, arr: %d\n", size, *arr); */
+	arr = (char *) malloc(size * sizeof(char));
 
-	if (*arr == 0)
+	if (arr == NULL)
 		return (NULL);
 
 	for (; i < size; i++)
 		arr[i] = c;
+
 	return (arr);
 }

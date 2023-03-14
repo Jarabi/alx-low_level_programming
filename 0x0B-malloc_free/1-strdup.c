@@ -17,7 +17,7 @@ void *_memcpy(void *dest, const void *src, int len)
 
 	for (i = 0; i < len; i++)
 		d[i] = s[i];
-	return dest;
+	return (dest);
 }
 
 /**

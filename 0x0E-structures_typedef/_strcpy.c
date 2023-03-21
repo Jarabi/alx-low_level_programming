@@ -8,17 +8,17 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-        int i = 0;
+	int i = 0;
 
-        /* Copy individual characters from src to dest */
-        while (*(src + i) != '\0')
-        {
-                *(dest + i) = *(src + i);
-                i++;
-        }
+	/* Copy individual characters from src to dest */
+	while (*(src + i) != '\0')
+	{
+		*(dest + i) = *(src + i);
+		i++;
+	}
 
-        /* Append null byte to end of dest */
-        *(dest + i) = '\0';
+	/* Append null byte to end of dest */
+	*(dest + i) = '\0';
 
-        return (dest);
+	return (dest);
 }

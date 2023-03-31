@@ -1,24 +1,19 @@
+global main
+extern printf
+
 section .data
-	hello db 'Hello, Holberton!', 0
-	nl db 10, 0 ; new line character and null terminator
+    hello_msg db "Hello, Holberton", 0x0a, 0
 
 section .text
-	global main
-
-	extern printf
-
 main:
-	; push the format string and argument onto the stack
-	push qword hello
-	call printf
+    push rbp            ; Save the base pointer
+    mov rbp, rsp        ; Set the base pointer to the current stack pointer
 
-	; push the new line character and null terminator onto the stack
-	push qword nl
-	call printf
+    lea rdi, [hello_msg] ; Load the address of the hello message into rdi
+    mov rax, 0          ; Set the first argument to 0 to indicate default format
+    call printf         ; Call the printf function to print the message
 
-	; clean up the stack
-	add rsp, 16
-
-	; return 0
-	mov eax, 0
-	ret
+    mov rsp, rbp        ; Reset the stack pointer to the base pointer
+    pop rbp             ; Restore the base pointer
+    xor eax, eax        ; Set the return value to 0
+    ret                 ; Return to the caller 

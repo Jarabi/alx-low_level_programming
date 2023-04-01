@@ -43,6 +43,6 @@ int digit_count(int n)
 	int dc = 1;
 
 	while ((n / dc) > 9)
-                dc *= 10;
+		dc *= 10;
 	return (dc);
 }

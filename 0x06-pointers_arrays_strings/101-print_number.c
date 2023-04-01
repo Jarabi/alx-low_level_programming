@@ -11,7 +11,7 @@ int digit_count(int n);
 
 void print_number(int n)
 {
-	int digits;
+	unsigned int digits;
 	int num = n;
 
 	if (num == 0)
@@ -47,7 +47,7 @@ void print_number(int n)
 
 int digit_count(int n)
 {
-	int dc = 1;
+	unsigned int dc = 1;
 
 	while ((n / dc) > 9)
 		dc *= 10;

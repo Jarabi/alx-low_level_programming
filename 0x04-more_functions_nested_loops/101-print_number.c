@@ -1,10 +1,9 @@
 #include "main.h"
 
-int _pow(int base, int power);
+int digit_count(int n);
 
 /**
  * print_number - Function to print out passed integer
- *
  * @n: integer to print
  *
  * Return: void
@@ -12,55 +11,45 @@ int _pow(int base, int power);
 
 void print_number(int n)
 {
-	int first_digit, position, zeros, count = 0, input = n;
+	unsigned int digits;
+	int num = n;
 
-	if (n == 0)
+	if (num == 0)
 	{
-		_putchar('0');
+		_putchar(48);
 		return;
 	}
 
-	while (input != 0)
+	if (num < 0)
 	{
-		input /= 10;
-		count++;
+		_putchar('-');
+		num *= -1;
 	}
 
-	if (n < 0)
-	{
-		_putchar(45);
-		n *= -1;
-	}
+	/* get the digit count */
+	digits = digit_count(num);
 
-	zeros = count - 1;
-
-	while (zeros >= 0)
+	/* print out the digits */
+	while (digits != 0)
 	{
-		position = _pow(10, zeros);
-		first_digit = n / position;
-		_putchar('0' + first_digit);
-		n -= (first_digit * position);
-		zeros--;
+		_putchar('0' + num / digits);
+		num %= digits;
+		digits /= 10;
 	}
 }
 
 /**
- * _pow - calculates the result of raising an integer to a power
+ * digit_count - calculates number of digits
+ * @n: number to check
  *
- * @base: the base
- * @power: the power to raise to
- *
- * Return: the result
+ * Return: number of digits
  */
-int _pow(int base, int power)
+
+int digit_count(int n)
 {
-	int result = 1;
+	unsigned int dc = 1;
 
-	while (power > 0)
-	{
-		result *= base;
-		power--;
-	}
-
-	return (result);
+	while ((n / dc) > 9)
+		dc *= 10;
+	return (dc);
 }

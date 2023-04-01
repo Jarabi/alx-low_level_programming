@@ -38,6 +38,13 @@ void print_number(int n)
 	}
 }
 
+/**
+ * digit_count - calculates number of digits
+ * @n: number to check
+ *
+ * Return: number of digits
+ */
+
 int digit_count(int n)
 {
 	int dc = 1;

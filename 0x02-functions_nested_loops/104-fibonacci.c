@@ -7,22 +7,22 @@
  */
 int main(void)
 {
-	long int i, j, sum;
-	int k;
+	int f1 = 1;
+	int f2 = 2;
+	int f;
+	int i;
 
-	i = 1;
-	j = 2;
-	sum = 0;
+	printf("%d, %d ", f1, f2);
 
-	printf("1, 2");
-
-	for (k = 0; k < 99; k++)
+	for (i = 3; i < 98; i++)
 	{
-		sum = i + j;
-		i = j;
-		j = sum;
+		f = f1 + f2;
+		printf("%d", f);
 
-		printf(", %lu", sum);
+		if (i < 98)
+			printf(", ");
+		f1 = f2;
+		f2 = f;
 	}
 
 	putchar('\n');

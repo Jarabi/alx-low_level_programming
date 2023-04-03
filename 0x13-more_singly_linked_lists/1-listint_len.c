@@ -9,14 +9,11 @@
 size_t listint_len(const listint_t *h)
 {
 	size_t elements = 0;
-	const listint_t *current;
 
-	current = h;
-
-	while (current != NULL)
+	while (h != NULL)
 	{
 		elements++;
-		current = current->next;
+		h = h->next;
 	}
-	return(elements);
+	return (elements);
 }

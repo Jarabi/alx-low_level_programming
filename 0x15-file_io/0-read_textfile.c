@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* open file in read-only */
 	fd = open_file_ro(filename);
-	
+
 	if (fd == -1)
 	{
 		free(buffer);

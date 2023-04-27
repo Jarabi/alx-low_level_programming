@@ -18,5 +18,5 @@ int get_endianness(void)
 	/* printf("0x%x\n", *num_ptr); */
 
 	endian = *num_ptr == 1 ? 1 : 0;
-	return  (endian)
+	return (endian)
 }

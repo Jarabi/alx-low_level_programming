@@ -12,11 +12,11 @@ int get_endianness(void)
 	int endian;
 
 	/* Get the address of where the number is stored */
-	num_ptr = &num;
+	num_ptr = (char *) (&num);
 
 	/* Testing */
 	/* printf("0x%x\n", *num_ptr); */
 
 	endian = *num_ptr == 1 ? 1 : 0;
-	return (endian)
+	return (endian);
 }

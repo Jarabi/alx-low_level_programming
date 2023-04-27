@@ -9,12 +9,14 @@ int get_endianness(void)
 {
 	unsigned int num = 1;
 	char *num_ptr;
+	int endian;
 
 	/* Get the address of where the number is stored */
-	num_ptr = (char *) (&num);
+	num_ptr = &num;
 
 	/* Testing */
-	printf("0x%x\n", *num_ptr);
+	/* printf("0x%x\n", *num_ptr); */
 
-	return (*num_ptr == 1 ? 1 : 0);
+	endian = *num_ptr == 1 ? 1 : 0;
+	return  (endian)
 }

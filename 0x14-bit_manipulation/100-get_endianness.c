@@ -7,16 +7,14 @@
  */
 int get_endianness(void)
 {
-	unsigned int num;
+	unsigned int num = 1;
 	char *num_ptr;
-	/* int endianness; */
-
-	num = 1;
 
 	/* Get the address of where the number is stored */
-	num_ptr = (char *) &num;
+	num_ptr = (char *) (&num);
 
+	/* Testing */
 	printf("0x%x\n", *num_ptr);
-	/* endianness = *num_ptr == 50 ? 1 : 0; */
-	return ((int) *num_ptr);
+
+	return (*num_ptr == 1 ? 1 : 0);
 }

@@ -19,12 +19,8 @@ At the end of this project, you are expected to be able to explain to anyone, **
 ---
 ### Tasks
 
-> A function that returns the sum of all its parameters:
-- [0-sum\_them\_all.c](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/0-sum_them_all.c)
-> A function that prints numbers, followed by a new line:
-- [1-print\_numbers.c](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/1-print_numbers.c)
-> A function that prints strings, followed by a new line:
-- [2-print\_strings.c](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/2-print_strings.c)
-> A function that prints anything:
-- [3-print\_all.c](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/3-print_all.c)
+1. A function that returns the sum of all its parameters: [sum\_them\_all](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/0-sum_them_all.c)
+2. A function that prints numbers, followed by a new line:[print\_numbers](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/1-print_numbers.c)
+3. A function that prints strings, followed by a new line:[print\_strings](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/2-print_strings.c)
+4. A function that prints anything:[print\_all](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/3-print_all.c)
 ---

@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 
-void _print_args(const char * const fmt, va_list arg_list, int len);
+void _print_args(const char * const fmt, va_list arg_list);
 void _print_str(char *s);
 
 /**
@@ -11,7 +11,6 @@ void _print_str(char *s);
  */
 void print_all(const char * const format, ...)
 {
-	int len = 0;
 	va_list list;
 
 	if (!format)
@@ -19,10 +18,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-	while (format[len] != '\0')
-		len++;
-
-	_print_args(format, list, len);
+	_print_args(format, list);
 
 	va_end(list);
 }
@@ -31,15 +27,14 @@ void print_all(const char * const format, ...)
  * _print_args - Prints arguments provided in list
  * @fmt: A list of types of arguments
  * @arg_list: Arguments list
- * @len: Number of argument types
  *
  * Return: Nothing
  */
-void _print_args(const char * const fmt, va_list arg_list, int len)
+void _print_args(const char * const fmt, va_list arg_list)
 {
 	int j = 0;
 
-	while (j < len)
+	while (fmt && fmt[j])
 	{
 		int ignore = 0;
 

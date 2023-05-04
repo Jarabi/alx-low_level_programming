@@ -20,7 +20,7 @@ At the end of this project, you are expected to be able to explain to anyone, **
 ### Tasks
 
 1. A function that returns the sum of all its parameters: [sum\_them\_all](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/0-sum_them_all.c)
-2. A function that prints numbers, followed by a new line:[print\_numbers](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/1-print_numbers.c)
-3. A function that prints strings, followed by a new line:[print\_strings](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/2-print_strings.c)
-4. A function that prints anything:[print\_all](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/3-print_all.c)
+2. A function that prints numbers, followed by a new line: [print\_numbers](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/1-print_numbers.c)
+3. A function that prints strings, followed by a new line: [print\_strings](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/2-print_strings.c)
+4. A function that prints anything: [print\_all](https://github.com/Jarabi/alx-low_level_programming/blob/main/0x10-variadic_functions/3-print_all.c)
 ---

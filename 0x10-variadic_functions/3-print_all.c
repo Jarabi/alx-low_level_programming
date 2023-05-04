@@ -13,13 +13,8 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 
-	if (!format)
-		return;
-
 	va_start(list, format);
-
 	_print_args(format, list);
-
 	va_end(list);
 }
 

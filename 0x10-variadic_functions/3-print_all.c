@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 
 void _print_args(const char * const fmt, va_list arg_list, int len);
+void _print_str(char *s);
 
 /**
  * print_all -  Finction that prints anything
@@ -34,7 +35,6 @@ void print_all(const char * const format, ...)
 void _print_args(const char * const fmt, va_list arg_list, int len)
 {
 	int j = 0;
-	char *s;
 
 	while (j < len)
 	{
@@ -52,12 +52,7 @@ void _print_args(const char * const fmt, va_list arg_list, int len)
 				printf("%f", va_arg(arg_list, double));
 				break;
 			case 's':
-				s = va_arg(arg_list, char *);
-
-				if (s)
-					printf("%s", s);
-				else
-					printf("(nil)");
+				_print_str(va_arg(arg_list, char *));
 				break;
 			default:
 				ignore = 1;
@@ -67,4 +62,20 @@ void _print_args(const char * const fmt, va_list arg_list, int len)
 		j++;
 	}
 	printf("\n");
+}
+
+/**
+ * _print_str - Print strings
+ * @s: string
+ *
+ * Return: Nothing
+*/
+void _print_str(char *s)
+{
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
 }

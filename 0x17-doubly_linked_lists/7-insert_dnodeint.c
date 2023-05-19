@@ -14,7 +14,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int index = 0;
 
 	/* Check if list is empty and idx is not 0 */
-	if (*h == NULL || (*h == NULL && idx != 0))
+	if (h == NULL || (*h == NULL && idx != 0))
 		return (NULL);
 
 	current = *h;

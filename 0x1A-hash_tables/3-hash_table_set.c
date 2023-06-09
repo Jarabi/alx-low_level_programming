@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int key_size = 0;
 
 	/* Check if key is NULL */
-	if (key == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
 
 	/* Check if key is empty */

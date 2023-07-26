@@ -1,26 +1,18 @@
-CC=gcc
-SRC=main.c school.c
-OBJ=$(SRC:.c=.o)
-NAME=school
-
-ifeq ($(OS), Windows_NT)
-	RM=del /Q
-else
-	RM=rm -f
-endif
-
-.PHONY: all clean oclean fclean re
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(OBJ) $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean: oclean
-	$(RM) $(NAME)
+fclean: clean oclean
 
-re: fclean all
+re: oclean all

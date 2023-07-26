@@ -1,0 +1,15 @@
+# Makefile
+CC=gcc
+# FLAGS=-Wall -Werror -Wextra -pedantic -std=gnu89
+OBJECTS=main.o school.o
+all: school
+
+school: $(OBJECTS)
+	$(CC) $(OBJECTS) -o school
+	@echo "$(CC) main.c school.c -o school"
+
+.c.o:
+	$(CC) $(FLAGS) -c $<
+
+clean:
+	rm -rf *.o school

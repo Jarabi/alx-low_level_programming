@@ -39,7 +39,7 @@ def island_perimeter(grid):
 
     """Get count of land zones grid"""
     for row in range(height):
-        land_zones += grid[row].count(1);
+        land_zones += grid[row].count(1)
 
     if land_zones > 0:
         isle_perimeter = grid_perimeter // land_zones

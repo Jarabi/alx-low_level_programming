@@ -37,11 +37,9 @@ def island_perimeter(grid):
     """Get perimeter of entire grid"""
     grid_perimeter = width * height * 2
 
-    """Get count of land zones grid starting with row 1 and col 1"""
-    for row in range(1, height - 1):
-        for col in range(1, width - 1):
-            if grid[row][col] == 1:
-                land_zones += 1;
+    """Get count of land zones grid"""
+    for row in range(height):
+        land_zones += grid[row].count(1);
 
     if land_zones > 0:
         isle_perimeter = grid_perimeter // land_zones

@@ -31,21 +31,29 @@ def island_perimeter(grid):
     """
     height = len(grid)
     width = len(grid[0])
-    isle_perimeter = 0
+    perimeter = 0
 
     for row in range(height):
         for col in range(width):
-            """Check if current cell is land (1)"""
             if grid[row][col] == 1:
-                """Add a count of 4 to count all sides"""
-                isle_perimeter += 4
-                """Check if top of land is also land"""
-                if row > 0 and grid[row - 1][col] == 1:
-                    """Subtract top side"""
-                    isle_perimeter -= 2
-                """Check if left of land is also land"""
-                if col > 0 and grid[row][col - 1] == 1:
-                    """Subtract left side"""
-                    isle_perimeter -= 2
+                if row == 0:
+                    perimeter += 1
+                else:
+                    perimeter += grid[row - 1][col] == 0
 
-    return isle_perimeter
+                if col == 0:
+                    perimeter += 1
+                else:
+                    perimeter += grid[row][col - 1] == 0
+
+                if row == height - 1:
+                    perimeter += 1
+                else:
+                    perimeter += grid[row + 1][col] == 0
+
+                if col == width - 1:
+                    perimeter += 1
+                else:
+                    perimeter += grid[row][col + 1] == 0
+
+    return perimeter

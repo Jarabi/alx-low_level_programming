@@ -1,6 +1,6 @@
 # 0x1E. C - Search Algorithms
 
-<kbd>C</kbd> <kbd>Ailgorithm</kbd>
+<kbd>C</kbd> <kbd>Algorithm</kbd>
 
 ## General
 

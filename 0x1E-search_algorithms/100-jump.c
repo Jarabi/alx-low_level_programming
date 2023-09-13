@@ -19,7 +19,7 @@ int jump_search(int *array, size_t size, int value)
 
 	low = 0;
 	high = 0;
-	step = sqrt(size);
+	step = (int)sqrt(size);
 
 	/* Finding block where value is present (if present) */
 	while (array[high] < value && high < size)

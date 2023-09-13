@@ -1,8 +1,6 @@
 #include <math.h>
 #include "search_algos.h"
 
-size_t min(size_t first, size_t second);
-
 /**
  * jump_search - searches for a value in a sorted array of
  * integers using the Jump search algorithm
@@ -14,48 +12,34 @@ size_t min(size_t first, size_t second);
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t idx, step;
+	size_t low, high, step;
 
 	if (!array)
 		return (-1);
 
-	idx = 0;
+	low = 0;
+	high = 0;
 	step = sqrt(size);
 
 	/* Finding block where value is present (if present) */
-	while (array[step] <= value && step < size)
+	while (array[high] < value && high < size)
 	{
-		printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
-		idx = step;
-		step += sqrt(size);
-
-		if (step > size - 1)
-			return (-1);
+		printf("Value checked array[%ld] = [%d]\n", high, array[high]);
+		low = high;
+		high += step;
 	}
 
-	printf("Value found between indexes [%ld] and [%ld]\n", idx, step);
+	printf("Value found between indexes [%ld] and [%ld]\n", low, high);
 
 	/* Linear search from idx to step */
-	for (; idx < step; idx++)
+	for (; low < size; low++)
 	{
-		printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
+		printf("Value checked array[%ld] = [%d]\n", low, array[low]);
 
 		/* If element is found */
-		if (array[idx] == value)
-			return (idx);
+		if (array[low] == value)
+			return (low);
 	}
 
 	return (-1);
-}
-
-/**
- * min - returns the minimum of two values
- * @first: first value
- * @second: second value
- *
- * Return: The minimum value
- */
-size_t min(size_t first, size_t second)
-{
-	return (first < second ? first : second);
 }
